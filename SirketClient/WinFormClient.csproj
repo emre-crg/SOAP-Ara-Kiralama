@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FA2C7EF-C1CE-4120-B0CC-5E7DECCA18DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SirketClient</RootNamespace>
+    <AssemblyName>SirketClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\AracService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\LoginService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\MusteriService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_AracEklemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_AracEklemeForm.Designer.cs">
+      <DependentUpon>K_AracEklemeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_AracGuncelleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_AracGuncelleForm.Designer.cs">
+      <DependentUpon>K_AracGuncelleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_AracListelemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_AracListelemeForm.Designer.cs">
+      <DependentUpon>K_AracListelemeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_KiralanaAracListeleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_KiralanaAracListeleForm.Designer.cs">
+      <DependentUpon>K_KiralanaAracListeleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_MüsteriEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_MüsteriEkleme.Designer.cs">
+      <DependentUpon>K_MüsteriEkleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKlasörü\LoginFormları\KurumsalLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKlasörü\LoginFormları\KurumsalLogin.Designer.cs">
+      <DependentUpon>KurumsalLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_MusteriListeleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_MusteriListeleme.Designer.cs">
+      <DependentUpon>K_MusteriListeleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKlasörü\LoginFormları\LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKlasörü\LoginFormları\LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKlasörü\LoginFormları\MusteriLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKlasörü\LoginFormları\MusteriLogin.Designer.cs">
+      <DependentUpon>MusteriLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_Anasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKlasörü\Kurumsal İşlem Formları\K_Anasayfa.Designer.cs">
+      <DependentUpon>K_Anasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKlasörü\Kurumsal İşlem Formları\K_AracEklemeForm.resx">
+      <DependentUpon>K_AracEklemeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKlasörü\Kurumsal İşlem Formları\K_AracGuncelleForm.resx">
+      <DependentUpon>K_AracGuncelleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKlasörü\Kurumsal İşlem Formları\K_AracListelemeForm.resx">
+      <DependentUpon>K_AracListelemeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKlasörü\Kurumsal İşlem Formları\K_KiralanaAracListeleForm.resx">
+      <DependentUpon>K_KiralanaAracListeleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKlasörü\Kurumsal İşlem Formları\K_MüsteriEkleme.resx">
+      <DependentUpon>K_MüsteriEkleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKlasörü\LoginFormları\KurumsalLogin.resx">
+      <DependentUpon>KurumsalLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKlasörü\Kurumsal İşlem Formları\K_MusteriListeleme.resx">
+      <DependentUpon>K_MusteriListeleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKlasörü\LoginFormları\LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKlasörü\LoginFormları\MusteriLogin.resx">
+      <DependentUpon>MusteriLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKlasörü\Kurumsal İşlem Formları\K_Anasayfa.resx">
+      <DependentUpon>K_Anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Connected Services\AracService\AracService.wsdl" />
+    <None Include="Connected Services\AracService\SirketClient.AracService.AracGuncelleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracService\SirketClient.AracService.AracListeleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracService\SirketClient.AracService.AracResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracService\SirketClient.AracService.YeniAracEkleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\LoginService\LoginService.wsdl" />
+    <None Include="Connected Services\LoginService\SirketClient.LoginService.KurumsalGirisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\LoginService\SirketClient.LoginService.MusteriGirisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriService\MusteriService.wsdl" />
+    <None Include="Connected Services\MusteriService\SirketClient.MusteriService.MusteriEkleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriService\SirketClient.MusteriService.MusteriListeleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriService\SirketClient.MusteriService.MusteriResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriService\SirketClient.MusteriService.OturumEkleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AracService\" />
+    <WCFMetadataStorage Include="Connected Services\LoginService\" />
+    <WCFMetadataStorage Include="Connected Services\MusteriService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MusteriService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MusteriService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MusteriService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LoginService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LoginService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LoginService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AracService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\AracService\configuration.svcinfo" />
+    <None Include="Connected Services\AracService\configuration91.svcinfo" />
+    <Content Include="Resimler\anahtar.png" />
+    <Content Include="Resimler\login.png" />
+    <Content Include="Resimler\person.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

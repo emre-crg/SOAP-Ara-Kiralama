@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.5" name="DBSOA">
+  <DataContextMoniker Name="/DBSOADataContext" />
+  <nestedChildShapes>
+    <classShape Id="285417e9-e4f5-4a21-9407-fa5cf9923144" absoluteBounds="6.25, 4, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBSOADataContext/Arac" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a356de3d-b258-45b8-9d7b-9fa3d0ff4a64" absoluteBounds="6.265, 4.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac3bd24f-a3d4-403c-adcf-9f1a30acd9c2" absoluteBounds="9, 2.875, 2, 2.3478011067708331">
+      <DataClassMoniker Name="/DBSOADataContext/KiralamaBilgisi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="037012d4-5743-47a4-acd3-819bd2445b77" absoluteBounds="9.015, 3.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67140c40-5b16-4c96-a323-13c4675d5ea7" absoluteBounds="3.5, 1.25, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/DBSOADataContext/Müsteri" />
+      <nestedChildShapes>
+        <elementListCompartment Id="716f87da-5efa-428b-8585-203a2670e485" absoluteBounds="3.515, 1.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6f2d16c8-fc20-4715-bb2b-2cdf375b51bc" absoluteBounds="0.75, 3.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DBSOADataContext/Oturum" />
+      <nestedChildShapes>
+        <elementListCompartment Id="faeaa921-dc5a-4971-a7aa-fbf1251106b1" absoluteBounds="0.765, 3.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4fd6f903-54c3-490e-a3bf-983e0019923c" absoluteBounds="3.5, 4.375, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DBSOADataContext/Sirket" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54a22780-206c-4fcc-9702-0f90bdec96ee" absoluteBounds="3.515, 4.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 4.61140055338542); (9 : 4.61140055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBSOADataContext/Arac/Arac_KiralamaBilgisi" />
+      <nodes>
+        <classShapeMoniker Id="285417e9-e4f5-4a21-9407-fa5cf9923144" />
+        <classShapeMoniker Id="ac3bd24f-a3d4-403c-adcf-9f1a30acd9c2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.0624995); (10 : 2.0624995); (10 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBSOADataContext/Müsteri/Müsteri_KiralamaBilgisi" />
+      <nodes>
+        <classShapeMoniker Id="67140c40-5b16-4c96-a323-13c4675d5ea7" />
+        <classShapeMoniker Id="ac3bd24f-a3d4-403c-adcf-9f1a30acd9c2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 3.375); (1.75 : 2.23159912109375); (3.5 : 2.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBSOADataContext/Oturum/Oturum_Müsteri" />
+      <nodes>
+        <classShapeMoniker Id="6f2d16c8-fc20-4715-bb2b-2cdf375b51bc" />
+        <classShapeMoniker Id="67140c40-5b16-4c96-a323-13c4675d5ea7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.35659912109375); (6.25 : 5.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBSOADataContext/Sirket/Sirket_Arac" />
+      <nodes>
+        <classShapeMoniker Id="4fd6f903-54c3-490e-a3bf-983e0019923c" />
+        <classShapeMoniker Id="285417e9-e4f5-4a21-9407-fa5cf9923144" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.375); (5.875 : 4); (5.875 : 2.5); (8.625 : 2.5); (9 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBSOADataContext/Sirket/Sirket_KiralamaBilgisi" />
+      <nodes>
+        <classShapeMoniker Id="4fd6f903-54c3-490e-a3bf-983e0019923c" />
+        <classShapeMoniker Id="ac3bd24f-a3d4-403c-adcf-9f1a30acd9c2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.56814697265625); (3.5 : 4.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBSOADataContext/Oturum/Oturum_Sirket" />
+      <nodes>
+        <classShapeMoniker Id="6f2d16c8-fc20-4715-bb2b-2cdf375b51bc" />
+        <classShapeMoniker Id="4fd6f903-54c3-490e-a3bf-983e0019923c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

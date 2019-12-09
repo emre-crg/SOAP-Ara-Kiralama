@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOA_ARACKIRALAMA" Class="DBSOADataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=EMRE\SQLEXPRESS01;Initial Catalog=SOA_ARACKIRALAMA;Integrated Security=True" SettingsObjectName="SoaProje.Properties.Settings" SettingsPropertyName="SOA_ARACKIRALAMAConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Arac" Member="Aracs">
+    <Type Name="Arac">
+      <Column Name="AracID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Marka" Type="System.String" DbType="NChar(25)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NChar(25)" CanBeNull="true" />
+      <Column Name="Yasi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BagajHacmi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KoltukSayisi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GunlukFiyat" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SirketID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KiralanmaDurumu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="airbag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Arac_KiralamaBilgisi" Member="KiralamaBilgisis" ThisKey="AracID" OtherKey="AracID" Type="KiralamaBilgisi" />
+      <Association Name="Sirket_Arac" Member="Sirket" ThisKey="SirketID" OtherKey="SirketID" Type="Sirket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KiralamaBilgisi" Member="KiralamaBilgisis">
+    <Type Name="KiralamaBilgisi">
+      <Column Name="KiralamaID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MüsteriID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VerilisTarihi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AlışTarihi" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="AracID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SonKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SirketId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AlınacakUcret" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Arac_KiralamaBilgisi" Member="Arac" ThisKey="AracID" OtherKey="AracID" Type="Arac" IsForeignKey="true" />
+      <Association Name="Müsteri_KiralamaBilgisi" Member="Müsteri" ThisKey="MüsteriID" OtherKey="MüsteriID" Type="Müsteri" IsForeignKey="true" />
+      <Association Name="Sirket_KiralamaBilgisi" Member="Sirket" ThisKey="SirketId" OtherKey="SirketID" Type="Sirket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Müsteri" Member="Müsteris">
+    <Type Name="Müsteri">
+      <Column Name="MüsteriID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="İsim" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Soyisim" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="TCNo" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="OturumID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Müsteri_KiralamaBilgisi" Member="KiralamaBilgisis" ThisKey="MüsteriID" OtherKey="MüsteriID" Type="KiralamaBilgisi" />
+      <Association Name="Oturum_Müsteri" Member="Oturum" ThisKey="OturumID" OtherKey="ID" Type="Oturum" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Oturum" Member="Oturums">
+    <Type Name="Oturum">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KullanıcıAdı" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="Sifre" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Association Name="Oturum_Müsteri" Member="Müsteris" ThisKey="ID" OtherKey="OturumID" Type="Müsteri" />
+      <Association Name="Oturum_Sirket" Member="Sirkets" ThisKey="ID" OtherKey="OturumID" Type="Sirket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sirket" Member="Sirkets">
+    <Type Name="Sirket">
+      <Column Name="SirketID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ŞirketAdi" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AracSayisi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OturumID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SirketPuani" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Sirket_Arac" Member="Aracs" ThisKey="SirketID" OtherKey="SirketID" Type="Arac" />
+      <Association Name="Sirket_KiralamaBilgisi" Member="KiralamaBilgisis" ThisKey="SirketID" OtherKey="SirketId" Type="KiralamaBilgisi" />
+      <Association Name="Oturum_Sirket" Member="Oturum" ThisKey="OturumID" OtherKey="ID" Type="Oturum" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
